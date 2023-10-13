@@ -22,4 +22,10 @@ class Main {
       console.error(error);
     }
   }
+async questionsLoop(strs, index=0){
+  if( index>=strs.length){
+    return console.log(`${this.playerName} Вы ответили на все вопросы!\nВаши набранные очки:${this.score}`)
+  }
+}
+
 }
