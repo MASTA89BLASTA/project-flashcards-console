@@ -1,13 +1,13 @@
-//File Module
-
-const fs = require('fs').promises; // что бы была обработка через очередь промисифиц
-const { EOL } = require('os'); // для разных операционных систем символ конца строки 
-const path = require('path'); // для правильного отображения слэшей
+// eslint-disable-next-line no-unused-vars
+const fs = require('fs/promises');
+const path = require('path');
+const { EOL } = require('os');
 
 class Module {
   static async topicsNames() {
     const topics = await fs.readdir(path.join('../topics'));
-    return topics.map((el) => el.replace('.txt', '').replaceAll('_', ' '));
+
+    return topics.map((topic) => topic.replace('.txt', ''));
   }
 
   static async getTopic(topicsName) {
@@ -15,4 +15,5 @@ class Module {
     return topic.split(EOL);
   }
 }
-Module.topicsNames();
+
+module.exports = { Module };
