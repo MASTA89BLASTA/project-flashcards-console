@@ -3,7 +3,7 @@ const { Interface } = require('./interface');
 const { Module } = require('./module');
 
 class Main {
-  constructor(playerName = 'Игрок', score = 0) {
+  constructor(playerName = process.argv[2], score = 0) {
     this.name = playerName;
     this.score = score;
   }
@@ -53,4 +53,3 @@ class Main {
 
 const starter = new Main();
 starter.quizStart();
-
