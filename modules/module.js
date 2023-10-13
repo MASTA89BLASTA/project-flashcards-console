@@ -17,3 +17,6 @@ class Module {
 }
 
 module.exports = { Module };
+
+
+{ Module };
